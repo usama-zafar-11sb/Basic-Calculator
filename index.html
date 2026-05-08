@@ -3,37 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Basic Calculator</title>
+    <meta name="description" content="A premium, modern glassmorphism basic calculator with a sleek interface and smooth animations." />
+    <meta name="keywords" content="calculator, modern ui, glassmorphism, web app, basic calculator" />
+    <meta name="author" content="Antigravity AI" />
+    <title>Modern Calculator | Premium Glassmorphism UI</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <div class="calculator">
-      <input
-        type="text"
-        class="calculator-screen"
-        id="calculator-screen"
-        disabled
-      />
-      <div class="calculator-buttons">
-        <button type="button" class="btn" onclick="clearScreen()">C</button>
-        <button type="button" class="btn" onclick="appendNumber('/')">/</button>
-        <button type="button" class="btn" onclick="appendNumber('*')">*</button>
-        <button type="button" class="btn" onclick="appendNumber('-')">-</button>
-        <button type="button" class="btn" onclick="appendNumber(7)">7</button>
-        <button type="button" class="btn" onclick="appendNumber(8)">8</button>
-        <button type="button" class="btn" onclick="appendNumber(9)">9</button>
-        <button type="button" class="btn" onclick="appendNumber('+')">+</button>
-        <button type="button" class="btn" onclick="appendNumber(4)">4</button>
-        <button type="button" class="btn" onclick="appendNumber(5)">5</button>
-        <button type="button" class="btn" onclick="appendNumber(6)">6</button>
-        <button type="button" class="btn" onclick="calculate()">=</button>
-        <button type="button" class="btn" onclick="appendNumber(1)">1</button>
-        <button type="button" class="btn" onclick="appendNumber(2)">2</button>
-        <button type="button" class="btn" onclick="appendNumber(3)">3</button>
-        <button type="button" class="btn" onclick="appendNumber(0)">0</button>
-        <button type="button" class="btn" onclick="appendNumber('.')">.</button>
+    <!-- Background Decoration -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <main class="calculator-container">
+      <div class="calculator" id="main-calculator">
+        <header class="calculator-header">
+          <h1>Calculator</h1>
+          <div class="status-dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+        </header>
+        
+        <!-- Changed to div for multi-line support -->
+        <div class="calculator-screen" id="calculator-screen">0</div>
+        
+        <div class="calculator-buttons">
+          <!-- Row 1 -->
+          <button type="button" class="btn btn-clear" id="btn-clear" onclick="clearScreen()">C</button>
+          <button type="button" class="btn btn-backspace" id="btn-backspace" onclick="backspace()">⌫</button>
+          <button type="button" class="btn btn-operator" id="btn-divide" onclick="appendNumber('/')">÷</button>
+          <button type="button" class="btn btn-operator" id="btn-multiply" onclick="appendNumber('*')">×</button>
+          
+          <!-- Row 2 -->
+          <button type="button" class="btn" id="btn-7" onclick="appendNumber(7)">7</button>
+          <button type="button" class="btn" id="btn-8" onclick="appendNumber(8)">8</button>
+          <button type="button" class="btn" id="btn-9" onclick="appendNumber(9)">9</button>
+          <button type="button" class="btn btn-operator" id="btn-subtract" onclick="appendNumber('-')">−</button>
+          
+          <!-- Row 3 -->
+          <button type="button" class="btn" id="btn-4" onclick="appendNumber(4)">4</button>
+          <button type="button" class="btn" id="btn-5" onclick="appendNumber(5)">5</button>
+          <button type="button" class="btn" id="btn-6" onclick="appendNumber(6)">6</button>
+          <button type="button" class="btn btn-operator" id="btn-add" onclick="appendNumber('+')">+</button>
+          
+          <!-- Row 4 -->
+          <button type="button" class="btn" id="btn-1" onclick="appendNumber(1)">1</button>
+          <button type="button" class="btn" id="btn-2" onclick="appendNumber(2)">2</button>
+          <button type="button" class="btn" id="btn-3" onclick="appendNumber(3)">3</button>
+          <button type="button" class="btn btn-equal" id="btn-equals" onclick="calculate()">=</button>
+          
+          <!-- Row 5 -->
+          <button type="button" class="btn" id="btn-0" style="grid-column: span 2;" onclick="appendNumber(0)">0</button>
+          <button type="button" class="btn" id="btn-dot" style="grid-column: span 2;" onclick="appendNumber('.')">.</button>
+        </div>
       </div>
-    </div>
+    </main>
+    
     <script src="index.js"></script>
   </body>
 </html>
